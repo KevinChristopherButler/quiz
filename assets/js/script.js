@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function runQuiz(quizType) {
-    alert("Running the " + quizType + " quiz!");
     document.getElementById("quizHeading").innerText = "The " + quizType + " Quiz";
     document.getElementById("questionNumber").innerText = "Question 0";
     document.getElementById("thisCorrectScore").innerText = "0";
@@ -34,15 +33,12 @@ function runQuiz(quizType) {
 }
 
 function getUserName() {
-    alert("getUserName");
     let userName = document.getElementById("userName").value;
     userName = (userName === "")? "Anonymous" : userName;
-    alert("I think the userName is " + userName);
     return userName;
 }
 
 function checkAnswer() {
-    alert("Checking the answer.");
     let response;
 
     /* Disable the radio button group. */
@@ -53,9 +49,11 @@ function checkAnswer() {
 
     /* Disable the Submit Answer button. */
     document.getElementById("submitAnswer").disabled = true;
+    document.getElementById("submitAnswer").classList.add("disabled");
 
     /* Enable the Next Question button. */
     document.getElementById("nextQuestion").disabled = false;
+    document.getElementById("nextQuestion").classList.remove("disabled");
 
     let userAnswer = "XXX";
     let quizType = determineCurrentQuiz();
@@ -71,7 +69,7 @@ function checkAnswer() {
     }
     if (userAnswer === quizzes[quizType][lastQuestionNumberIndex].rightAnswer) {
         updateScoreboard(true);
-        response = "Correct!";
+        response = "That's correct, " + getUserName() + "!";
     }
     else {
         updateScoreboard(false);
@@ -87,16 +85,17 @@ function checkAnswer() {
  * appropriate message for the user.
  */
 function displayNextQuestion() {
-    alert("Displaying the next question.");
 
     /* Blank out the last response.      */
     document.getElementById("answerAndFeedback").innerHTML = "<p></p>";
 
     /* Disable the Next Question button. */
     document.getElementById("nextQuestion").disabled = true;
+    document.getElementById("nextQuestion").classList.add("disabled");
 
     /* Disable the Submit Answer button. This will be enabled when an answer radio button is clicked. */
     document.getElementById("submitAnswer").disabled = true;
+    document.getElementById("submitAnswer").classList.add("disabled");
 
     /* Determine the quiz category and the number of the last question displayed within
        that category. */
@@ -122,7 +121,9 @@ function displayNextQuestion() {
         /* Add a click event listener to each radio button so that the Submit Answer button may be enabled. */ 
         radioButtons = document.getElementsByName("possibleAnswer");
         for (let i = 0; i < radioButtons.length; i++) {
-            radioButtons[i].onclick = function() { document.getElementById("submitAnswer").disabled = false; }
+            radioButtons[i].onclick = function() {
+                document.getElementById("submitAnswer").disabled = false;
+                document.getElementById("submitAnswer").classList.remove("disabled"); }
         }
     }
     else {
@@ -134,7 +135,6 @@ function displayNextQuestion() {
 }
 
 function updateScoreboard(correctAnswer) {
-    alert("updateScoreboard");
     if (correctAnswer) {
         let oldThisCorrectScore = parseInt(document.getElementById("thisCorrectScore").innerText);
         document.getElementById("thisCorrectScore").innerText = ++oldThisCorrectScore;
