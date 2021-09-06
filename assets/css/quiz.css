@@ -3,6 +3,7 @@ body {
 }
 
 header {
+	padding: 2%;
     background-color: orange;
 }
 
@@ -63,4 +64,20 @@ footer {
 
 .centre-text {
     text-align: center;
+}
+
+header div {
+    display: inline-Block;
+}
+
+#logoHolder {
+    width: 10%;
+}
+
+#titleHolder {
+    width: 79%;
+}
+
+#quizHeading {
+    text-transform: capitalize;
 }

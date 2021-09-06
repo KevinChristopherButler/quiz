@@ -13,8 +13,13 @@
     <body>
 
         <header>
+		<div id="logoHolder">
             <img src="./assets/images/quizLogo.png" alt="Logo for the Quiz Application">
+		</div>
+	    <div class="spacer"></div>
+		<div id="titleHolder">
             <h1>Quiz</h1>
+		</div>
         </header>
 
 	<div class="setUserName">
@@ -23,41 +28,30 @@
 
 	<div class="selectCategory">
             <h2>Select a quiz category</h2>
-	    <div class="categoryContainer col-1-4" data-type="football">
-                <figure class="category">
-                    <img src="./assets/images/football.png" alt="Football">
-                </figure>
-                <p class="centre-text">Football</p>
-	    </div>
-	    <div class="categoryContainer col-1-4" data-type="history">
-	        <figure class="category">
-                    <img src="./assets/images/roman.png" alt="History">
-                </figure>
-                <p class="centre-text">History</p>
-	    </div>
-	    <div class="categoryContainer col-1-4" data-type="literature">
-                <figure class="category">
-                    <img src="./assets/images/books.png" alt="Literature">
-                </figure>
-                <p class="centre-text">Literature</p>
-	    </div>
-	    <div class="categoryContainer col-1-4" data-type="science">
-                <figure class="category">
-                    <img src="./assets/images/shuttle.png" alt="Science">
-                </figure>
-                <p class="centre-text">Science</p>
-	    </div>
+	    <button data-type="football">Football</button>
+	    <button data-type="history">History</button>
+	    <button data-type="literature">Literature</button>
+	    <button data-type="science">Science</button>
 	    <div class="spacer"></div>
 	</div>
 
 	<div class="quizQuestion">
-            <p>A question is displayed here</p>
+            <h2 id="quizHeading"></h2>
+            <h3 id="questionNumber"></h3>
+            <div id="displayQuestion">
+            </div>
+            <button data-type="submitAnswer">Submit Answer</button>
 	    <p>The answer and feedback is shown here.</p>
-	    <button id="nextQuestion">Next Question</button>
+            <section id="answerAndFeedback">
+            </section>
+	    <button data-type="nextQuestion">Next Question</button>
 	</div>
 
 	<div class="scoreboard">
-            <p>The running score is displayed here</p>
+            <p>Correct answers this quiz <span id="thisCorrectScore">0</span></p>
+            <p>Incorrect answers this quiz <span id="thisIncorrectScore">0</span></p>
+            <p>Correct answers all quizzes <span id="allCorrectScore">0</span></p>
+            <p>Incorrect answers all quizzes <span id="allIncorrectScore">0</span></p>
 	</div>
 
         <footer>
