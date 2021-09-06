@@ -3,7 +3,7 @@ body {
 }
 
 header {
-	padding: 2%;
+    padding: 2%;
     background-color: orange;
 }
 
@@ -62,10 +62,6 @@ footer {
     clear: both;
 }
 
-.centre-text {
-    text-align: center;
-}
-
 header div {
     display: inline-Block;
 }
@@ -80,4 +76,26 @@ header div {
 
 #quizHeading {
     text-transform: capitalize;
+}
+
+section {
+	margin: 3%;
+	border-radius: 10px;
+	padding: 20px;
+	border: 1px dotted;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.btn {
+	border-radius: 5px;
+	color: #000;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 400;
+	letter-spacing: .5px;
+	margin: 0;
+	text-transform: capitalize;
 }
