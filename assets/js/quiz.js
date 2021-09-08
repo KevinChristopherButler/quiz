@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (this.getAttribute("data-type") === "nextQuestion") {
                 displayNextQuestion();
             } else if (this.getAttribute("data-type") === "submitAnswer") {
-                checkAnswer()
+                checkAnswer();
             } else {
                 let quizType = this.getAttribute("data-type");
                 runQuiz(quizType);
@@ -43,7 +43,7 @@ function checkAnswer() {
 
     /* Disable the radio button group. */
     let radioButtons = document.getElementsByName("possibleAnswer");
-    for (radioButton of radioButtons) {
+    for (let radioButton of radioButtons) {
         radioButton.disabled = true;
     }
 
@@ -123,7 +123,7 @@ function displayNextQuestion() {
         for (let i = 0; i < radioButtons.length; i++) {
             radioButtons[i].onclick = function() {
                 document.getElementById("submitAnswer").disabled = false;
-                document.getElementById("submitAnswer").classList.remove("disabled"); }
+                document.getElementById("submitAnswer").classList.remove("disabled"); };
         }
     }
     else {
@@ -186,4 +186,4 @@ const quizzes = {
                       {question: "Ichthyology is the study of what?", suggestedAnswers: ["Fish", "Insects", "Bats"], rightAnswer: "Fish"},
                       {question: "Basalt is an example of which type of rock?", suggestedAnswers: ["Metamorphic", "Igneous", "Sedimentary"], rightAnswer: "Igneous"},
                       {question: "Crick and Watson specialised in which branch of science?", suggestedAnswers: ["Nuclear Physics", "Electromagnetism", "Genetics"], rightAnswer: "Genetics"}],
-}
+};
