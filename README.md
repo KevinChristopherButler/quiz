@@ -20,6 +20,34 @@ ensures that specialist knowledge is not required to complete any category.
 
 ## Testing
 
+## Playing the Game
+
+When the quiz application is first displayed, the football category is selected by default. The user may, at any point, select
+a different category from the four-button menu area:
+
+<img src="./assets/images/menuArea.PNG" alt="The menu area">
+
+Each question is displayed with three possible answers. Below the question are two buttons which are disabled when the question is displayed. These buttons allow the user to submit an answer and display the next question at the appropriate times.
+
+<img src="./assets/images/displayQuestion.PNG" alt="A question when displayed initially">
+
+When the user clicks on a radio button (a possible answer), the 'Submit Answer' button is enabled.
+
+<img src="./assets/images/selectAnswer.PNG" alt="A question when an answer has been selected">
+
+Pressing the 'Submit Answer' button checks the submitted answer. An appropriate message is displayed for correct and incorrect answers. In either case, the 'Submit Answer' button is disabled while the 'Next Question' button is enabled.
+
+<img src="./assets/images/checkedAnswer.PNG" alt="A question with a checked answer">
+
+By default, the messages displayed are impersonal, referring to the user simply as 'Anonymous'. The messages may be personalised by entering a name in the 'Want to get personal?' area.
+
+<img src="./assets/images/getPersonal.PNG" alt="Adding a username">
+
+The application tracks the score for the current quiz category and the overall score across all categories in the 'Scoreboard' area.
+
+<img src="./assets/images/scoreboard.PNG" alt="The Scoreboard area">
+
+
 ### Validator Testing
 
 ### HTML
