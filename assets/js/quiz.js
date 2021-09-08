@@ -20,9 +20,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     runQuiz("football");
-
 });
 
+
+/**
+ * Run the selected quiz, as indicated by the quizType parameter.
+ */
 function runQuiz(quizType) {
     document.getElementById("quizHeading").innerText = "The " + quizType + " Quiz";
     document.getElementById("questionNumber").innerText = "Question 0";
@@ -32,12 +35,23 @@ function runQuiz(quizType) {
     displayNextQuestion(quizType, 0);
 }
 
+
+/**
+ * Interrogate the DOM to retrieve the username entered by the user, if any.
+ */
 function getUserName() {
     let userName = document.getElementById("userName").value;
     userName = (userName === "")? "Anonymous" : userName;
+
     return userName;
 }
 
+
+/**
+ * Check the answer selected by the user against the correct answer in the quizzes
+ * dictionary. Format an appropriate message for the user, depending on whether her
+ * answer is correct or not.
+ */
 function checkAnswer() {
     let response;
 
@@ -79,6 +93,7 @@ function checkAnswer() {
     document.getElementById("answerAndFeedback").innerHTML = "<p>" + response + "</p>";
 }
 
+
 /**
  * Display the next question - if there is one!
  * If there are no more questions for the current quiz category, format an
@@ -86,14 +101,10 @@ function checkAnswer() {
  */
 function displayNextQuestion() {
 
-    /* Blank out the last response.      */
+    /* Prepare the page elements for the next question. */
     document.getElementById("answerAndFeedback").innerHTML = "<p></p>";
-
-    /* Disable the Next Question button. */
     document.getElementById("nextQuestion").disabled = true;
     document.getElementById("nextQuestion").classList.add("disabled");
-
-    /* Disable the Submit Answer button. This will be enabled when an answer radio button is clicked. */
     document.getElementById("submitAnswer").disabled = true;
     document.getElementById("submitAnswer").classList.add("disabled");
 
@@ -131,9 +142,13 @@ function displayNextQuestion() {
         /* Display the response on screen. */
         document.getElementById("answerAndFeedback").innerHTML = "<p>" + response + "</p>";
     }
-
 }
 
+
+/**
+ * Update the scoreboard figures i.e. the score for the current quiz category and the overall
+ * score.
+ */
 function updateScoreboard(correctAnswer) {
     if (correctAnswer) {
         let oldThisCorrectScore = parseInt(document.getElementById("thisCorrectScore").innerText);
@@ -149,6 +164,7 @@ function updateScoreboard(correctAnswer) {
     }
 }
 
+
 /**
  * Interrogate the DOM to find the current quiz type and determine the last question number
  * displayed to the user.
@@ -156,15 +172,27 @@ function updateScoreboard(correctAnswer) {
 function determineCurrentQuiz() {
     let quizTypeWords = document.getElementById("quizHeading").innerHTML.toLowerCase();
     let quizType = quizTypeWords.split(" ")[1];
+
     return quizType;
 }
 
+
+/**
+ * Interrogate the DOM to find the last question number displayed to the user in the current
+ * quiz category..
+ */
 function determineCurrentQuestion() {
     let questionNumberWords = document.getElementById("questionNumber").innerHTML;
     let lastQuestionNumber = questionNumberWords.split(" ")[1];
+
     return lastQuestionNumber;
 }
 
+
+/**
+ * Each quiz category contains five questions by default. More questions may be added to any
+ * category without necessitating code changes.
+ */
 const quizzes = {
 	football   : [{question: "Paul McGrath played for which club in 1990?", suggestedAnswers: ["Manchester United", "St. Patrick's Athletic", "Aston Villa"], rightAnswer: "Aston Villa"},
                       {question: "Which team won the first FA Cup Final played in the old Wembley Stadium?", suggestedAnswers: ["Bolton Wanderers", "West Ham", "Arsenal"], rightAnswer: "Bolton Wanderers"},
