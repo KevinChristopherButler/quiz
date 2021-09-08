@@ -1,11 +1,28 @@
+/*
+ *
+ * Set basic properties for the entire page.
+ *
+ */
+
+html {
+    font-size: 10px;
+}
+
 body {
     background-color: #F0F2EB;
 }
 
+
+/*
+ *
+ * Header styling..
+ *
+ */
+
 header {
     margin: 3%;
     padding: 2%;
-    border-radius: 10px;
+    border-radius: 1rem;
     background-color: #F07626;
     border: 1px dotted;
 }
@@ -22,31 +39,58 @@ header .pageTitle {
 
 .pageTitle {
     width: 89%;
-    font-size: 24px;
+    font-size: 3rem;
+}
+
+img {
+    border-radius: .5rem;
 }
 
 .spacer {
     clear: both;
 }
 
-#quizHeading {
-    text-transform: capitalize;
-}
+
+/*
+ *
+ * Sections
+ *
+ */
 
 section {
     background-color: #DDF0F1;
     margin: 3%;
-    border-radius: 10px;
+    border-radius: 1rem;
     padding: 2%;
     border: 1px dotted;
+    font-size: 1.6rem;
 }
 
-.centerText {
+#quizHeading {
+    text-transform: capitalize;
+}
+
+.setFontSize {
+    font-size: 3rem;
+}
+
+.centreText {
     text-align: center;
 }
 
+.shiftRight {
+    margin-left: 20%;
+}
+
+
+/*
+ *
+ * Buttons
+ *
+ */
+
 .btn {
-    border-radius: 8px;
+    border-radius: 1rem;
     color: #FFF;
     background-color: #150DA0;
     border: none;
@@ -54,11 +98,11 @@ section {
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1.4rem;
     letter-spacing: .5px;
     text-transform: capitalize;
     text-align: center;
-    padding: 15px 32px;
+    padding: 1rem 3rem;
 }
 
 .btn:hover {

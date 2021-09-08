@@ -4,11 +4,11 @@
         <title>Quiz</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./assets/css/quiz.css" />
         <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
         <link rel="manifest" href="./assets/images/site.webmanifest">
+        <link rel="stylesheet" href="./assets/css/quiz.css" />
     </head>
     <body>
 
@@ -16,46 +16,60 @@
             <div class="logo">
                 <img src="./assets/images/quizLogo.png" alt="Logo for the Quiz Application">
             </div>
-            <div class="pageTitle centerText">
+            <div class="pageTitle centreText">
                 <h1>Quiz</h1>
             </div>
         </header>
 
-	<section class="centerText setUserName">
-            <h2>Want to get personal?</h2>
-	    <p>Enter your name in the box below to add a personal touch to the system messages.
-	       The default name is simply 'Anonymous'.</p>
-	    <label for="userName">My name is ...</label>
-	    <input type="text" id="userName" name="userName" placeholder="Anonymous">
-	</section>
+        <!--
+            Allow the user to enter a personal name.
+        -->
+        <section class="centreText">
+            <h2 class="setFontSize">Want to get personal?</h2>
+            <p>Enter your name in the box below to add a personal touch to the system messages.
+               The default name is simply 'Anonymous'.</p>
+            <label for="userName">My name is ...</label>
+            <input type="text" id="userName" name="userName" placeholder="Anonymous">
+        </section>
 
-	<section class="centerText selectCategory">
-            <h2>Select a Quiz Category</h2>
-	    <button data-type="football" class="btn">Football</button>
-	    <button data-type="history" class="btn">History</button>
-	    <button data-type="literature" class="btn">Literature</button>
-	    <button data-type="science" class="btn">Science</button>
-	    <div class="spacer"></div>
-	</section>
+        <!--
+            Allow the user to choose from four quiz categories.
+        -->
+        <section class="centreText">
+            <h2 class="setFontSize">Select a Quiz Category</h2>
+            <button data-type="football" class="btn">Football</button>
+            <button data-type="history" class="btn">History</button>
+            <button data-type="literature" class="btn">Literature</button>
+            <button data-type="science" class="btn">Science</button>
+            <div class="spacer"></div>
+        </section>
 
-	<section class="quizQuestion">
-            <h2 id="quizHeading" class="centerText"></h2>
-            <h3 id="questionNumber"></h3>
-            <div id="displayQuestion">
+        <!--
+            Display the quiz question.
+        -->
+        <section>
+            <h2 id="quizHeading" class="centreText setFontSize"></h2>
+            <div class="shiftRight">
+                <h3 id="questionNumber"></h3>
+                <div id="displayQuestion">
+                </div>
+                <button id="submitAnswer" data-type="submitAnswer" class="btn">Submit Answer</button>
+                <div id="answerAndFeedback">
+                </div>
+                <button id="nextQuestion" data-type="nextQuestion" class="btn">Next Question</button>
             </div>
-            <button id="submitAnswer" data-type="submitAnswer" class="btn">Submit Answer</button>
-            <div id="answerAndFeedback">
-            </div>
-	    <button id="nextQuestion" data-type="nextQuestion" class="btn">Next Question</button>
-	</section>
+        </section>
 
-	<section class="scoreboard">
-            <h2 class="centerText">Scoreboard</h2>
+        <!--
+            Display the scoreboard i.e. score for the current quiz and the running total.
+        -->
+        <section class="centreText">
+            <h2 class="setFontSize">Scoreboard</h2>
             <p>Correct answers this quiz <span id="thisCorrectScore">0</span></p>
             <p>Incorrect answers this quiz <span id="thisIncorrectScore">0</span></p>
             <p>Correct answers all quizzes <span id="allCorrectScore">0</span></p>
             <p>Incorrect answers all quizzes <span id="allIncorrectScore">0</span></p>
-	</section>
+        </section>
 
         <script src="./assets/js/script.js" type="text/javascript"></script>
     </body>
