@@ -22,15 +22,14 @@ ensures that specialist knowledge is not required to complete any category.
 
 ### Validator Testing
 
-- HTML
-Each page showed a warning message: "Section lacks heading. Consider using h2-h6 elements.....".
-I am inclined to leave this alone since the section is contained within an article element which has a header.
+### HTML
+The HTML check (https://validator.w3.org) shows three warning messages. Two of these are "empty heading" messages. This is acceptable as the headings in question are populated by the JavaScript processing. The third warning states that it is unnecessary to specify the file type when referencing the JavaScript script file itself. I prefer to include the file type in all cases. 
 
-- CSS
-No errors were found when passing through the official (Jigsaw) validator.
+### CSS
+No errors were found by the Jigsaw validator (https://jigsaw.w3.org/css-validator).
 
-- Accessibility
-Lighthouse showed an accessibility score of ???.
+### Accessibility
+Lighthouse showed an accessibility score of 100.
 <img src="./assets/images/lighthouse.PNG" alt="Lighthouse report">
 
 ### Unfixed Bugs
@@ -42,11 +41,12 @@ None.
 The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 - In the GitHub repository, navigate to the Settings tab
-- From the source section drop-down menu, select the Main Branch
+- Click on 'Pages' in the menu on the left.
+- From the source section drop-down menu, select the Main Branch.
+- Press the 'Save' button.
 - Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-The live link can be found here - https://kevinchristopherbutler.github.io/quiz/
-
+The live link is: https://kevinchristopherbutler.github.io/quiz/
 
 ## Credits
 
