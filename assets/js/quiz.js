@@ -119,7 +119,7 @@ function displayNextQuestion() {
              <label for="option2">${quizzes[quizType][questionNumber].suggestedAnswers[2]}</label><br>`;
         document.getElementById("displayQuestion").innerHTML = questionHTML;
         /* Add a click event listener to each radio button so that the Submit Answer button may be enabled. */ 
-        radioButtons = document.getElementsByName("possibleAnswer");
+        let radioButtons = document.getElementsByName("possibleAnswer");
         for (let i = 0; i < radioButtons.length; i++) {
             radioButtons[i].onclick = function() {
                 document.getElementById("submitAnswer").disabled = false;
